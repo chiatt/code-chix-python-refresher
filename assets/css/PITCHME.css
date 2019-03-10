@@ -1,0 +1,15 @@
+
+.reveal section img {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.reveal a {
+  color: white;
+}
+
+.reveal a:hover {
+  color: white;
+  font-weight: bold;
+}
