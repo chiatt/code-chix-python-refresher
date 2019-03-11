@@ -1,8 +1,8 @@
-# Let's Get Started
+# A Python Refresher
 
 ---
 
-## Add Some Slide Candy
+## Just a little about me...
 
 ![](assets/img/board-measurements.jpg)
 
