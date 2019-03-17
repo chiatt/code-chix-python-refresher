@@ -15,7 +15,7 @@
 
 ---
 
-Exercise objective
+## Workshop objectives
 
 Through the exercises in this workshop participants will read over a file containing a list of customers. They will then write functions to parse the data and calculate the distance between a mock business and each customer.
 
@@ -23,7 +23,7 @@ They will then identify their mock businesses closest customers and, time permit
 
 ---
 
-1. Python overview: qualities and conventions
+## Python overview: qualities and conventions
 
     - Interpreted language
     - Interactive mode
@@ -33,7 +33,8 @@ They will then identify their mock businesses closest customers and, time permit
 
 ---
 
-2. Installing Python and dependencies
+## Installing Python and dependencies
+
   - Virtualenv: What it is and why it’s useful
   - What are modules and packages
   - PyPi/pip: Where you can find or distribute packages
@@ -44,28 +45,35 @@ They will then identify their mock businesses closest customers and, time permit
 
 ---
 
-3. Writing functions
-  a. Basic function syntax
-  b. Arguments - default values
-  c. Our activity will cover reading files, so we will briefly cover file i/o and using 'with' to create a context
+## Writing functions
+
+  - Basic function syntax
+  - Arguments - default values
+  - Our activity will cover reading files, so we will briefly
+   cover file i/o and using 'with' to create a context
   Activity 1: Participants will write two functions one that reads data from a csv and a second function that calculates the cartesian distance between two pairs of coordinates
 
 ---
 
-4. Data Structures and Iterating
-  a. Strings and string formatting
-  b. Tuples, Lists, Sets, Dictionaries
-  c. List comprehensions
-  d. Generators
-  e. Decorators
+## Data Structures and Iterating
+
+  - Strings and string formatting
+  - Tuples, Lists, Sets, Dictionaries
+  - List comprehensions
+  - Generators
+  - Decorators
 
 ---
 
-Activity 1: Participants will read over a text file and parse each record into a dictionary.
+## Activity 1:
+
+Participants will read over a text file and parse each record into a dictionary.
 
 ---
 
-Activity 2: Participants will write a decorator for their distance function that will return a dictionary with the start and end coordinates, and distance value
+## Activity 2:
+
+Participants will write a decorator for their distance function that will return a dictionary with the start and end coordinates, and distance value
 
 ---
 
@@ -100,4 +108,6 @@ print distance_no_dec
 
 ---
 
-Activity 3: Participants will use a list comprehension to filter their data by a given distance.
+## Activity 3:
+
+Participants will use a list comprehension to filter their data by a given distance.
