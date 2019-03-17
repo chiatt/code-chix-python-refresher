@@ -106,6 +106,10 @@ print distance_no_dec
 
 ~~~~
 
+@[1]
+@[4]
+@[5-7]
+
 ---
 
 ## Activity 3:
