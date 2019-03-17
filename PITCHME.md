@@ -78,7 +78,6 @@ Participants will write a decorator for their distance function that will return
 ---
 
 ~~~~{.python}
-
 import functools
 import math
 
@@ -103,15 +102,14 @@ distance_no_dec = calc_distance_no_decorator(start={'x': 5, 'y': 10}, end={'x': 
 
 print distance
 print distance_no_dec
-
 ~~~~
 
-@[2]
-@[5-10]
-@[12-15]
-@[17-19]
-@[21]
-@[22]
+@[1]
+@[3-8]
+@[10-13]
+@[15-17]
+@[19]
+@[20]
 
 ---
 
