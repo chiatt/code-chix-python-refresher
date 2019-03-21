@@ -20,5 +20,5 @@ def calc_distance_no_decorator(start, end):
 distance = calc_distance(start={'x': 5, 'y': 10}, end={'x': 2, 'y': 7})
 distance_no_dec = calc_distance_no_decorator(start={'x': 5, 'y': 10}, end={'x': 2, 'y': 7})
 
-print distance
-print distance_no_dec
+print(distance)
+print(distance_no_dec)
