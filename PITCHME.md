@@ -45,6 +45,16 @@ They will then identify their mock businesses closest customers and, time permit
 
 ---
 
+  ## Virtualenv
+
+  - Allows you to have multiple installations of Python
+  - Useful if you have different projects that rely on different versions of the
+  same dependency.
+  - Node does this differently with a global installation and dependencies
+  installed in each project directory.
+
+---
+
 ## Writing functions
 
   - Basic function syntax
