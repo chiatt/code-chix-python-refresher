@@ -31,15 +31,16 @@ They will then identify their mock businesses closest customers and, time permit
     - Rapid development
     - PEP 8
 
+
 ---
 
 ## Installing Python and dependencies
 
   - Virtualenv: What it is and why it’s useful
-  - What are modules and packages
   - PyPi/pip: Where you can find or distribute packages
       - installing, upgrading, searching for packages
   - Requirements.txt - creating and installing from requirements.txt
+  - What are modules and packages
 
     Activity 1: Install python in a virtual environment and install dependencies using a requirements.txt file. For review we will just confirm that everyone has everything they need installed to proceed with the workshop
 
@@ -48,12 +49,38 @@ They will then identify their mock businesses closest customers and, time permit
   ## Virtualenv
 
   - Allows you to have multiple installations of Python
-  - Useful if you have different projects that rely on different versions of the
+  - Useful for projects with different versions of the
   same dependency.
   - Node does this differently with a global installation and dependencies
   installed in each project directory.
+---
+
+### requirements.txt
+
+folium
 
 ---
+
+## Installing requirements
+
+### unix/linux
+
+~~~~{.bash}
+$ virtualenv env
+$ source env/bin/activate
+(env)$ pip install -r requirements.txt
+~~~~
+
+### Windows
+
+~~~~{.bash}
+> virtualenv env
+> env\Scripts\activate
+(env) > pip install -r requirements.txt
+~~~~
+
+---
+
 
 ## Writing functions
 
@@ -62,6 +89,12 @@ They will then identify their mock businesses closest customers and, time permit
   - Our activity will cover reading files, so we will briefly
    cover file i/o and using 'with' to create a context
   Activity 1: Participants will write two functions one that reads data from a csv and a second function that calculates the cartesian distance between two pairs of coordinates
+
+~~~~{.python}
+if __name__ == "__main__":
+    # execute only if run as a script
+    main()
+~~~~
 
 ---
 
