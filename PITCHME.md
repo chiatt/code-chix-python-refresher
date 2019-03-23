@@ -81,7 +81,7 @@ $ source env/bin/activate
 
 ---
 
-## Writing functions
+### Writing functions
 
   - Basic function syntax
   - Main
@@ -92,7 +92,7 @@ $ source env/bin/activate
 
 ---
 
-## A function
+### A function
 
 ~~~~{.python}
 def add_numbers(x, y):
@@ -101,10 +101,12 @@ def add_numbers(x, y):
 
 ~~~~{.python}
 >>> add_numbers(22, 8)
->>> 30
+30
 ~~~~
 
-## Main
+---
+
+### Main
 
 ~~~~{.python}
 def add_numbers(x, y):
@@ -119,9 +121,7 @@ if __name__ == "__main__":
 
 ---
 
-## Arguments
-
-### Positional and Named
+### Positional and Named Arguments
 
 ~~~~{.python}
 def add_numbers(x, y="7"):
@@ -137,10 +137,13 @@ def add_numbers(x="2", y):
 
 ---
 
-## *args and **kwargs
+### '*args' and '**kwargs'
 
 ~~~~{.python}
-def add_numbers(x, y="7"):
+def add_numbers(*args, **kwargs):
+    pass
+
+def add_numbers(*cats, **dogs):
     pass
 ~~~~
 
@@ -150,7 +153,13 @@ def add_numbers(x, y="7"):
 def using_args(foo, *args):
     print('foo:', foo)
     print('*args:', args)
+~~~~
 
+~~~~{.bash}
+>>> using_args('inventory', 'birds', 'hamsters')
+
+foo: inventory
+*args: ('birds', 'hamsters')
 ~~~~
 
 ---
@@ -161,6 +170,12 @@ def using_kwargs(foo, **kwargs):
     print('**kwargs:', kwargs)
 ~~~~
 
+~~~~{.bash}
+>>> using_kwargs('inventory', birds=10, hamsters=5)
+foo: inventory
+**kwargs: {'birds': 10, 'hamsters': 5}
+~~~~
+
 ---
 
 ~~~~{.python}
@@ -168,6 +183,13 @@ def using_args_and_kwargs(foo, *args, **kwargs):
     print('foo:', foo)
     print('*args:', args)
     print('**kwargs:', kwargs)
+~~~~
+
+~~~~{.bash}
+>>> using_args_and_kwargs('inventory', 'cats', 'dogs', birds=10, hamsters=5)
+foo: inventory
+*args: ('cats', 'dogs')
+**kwargs: {'birds': 10, 'hamsters': 5}
 ~~~~
 
 ---
