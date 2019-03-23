@@ -55,7 +55,7 @@ They will then identify their mock businesses closest customers and, time permit
   installed in each project directory.
 ---
 
-### requirements.txt
+#### requirements.txt
 
 folium
 
@@ -63,7 +63,7 @@ folium
 
 ## Installing requirements
 
-### unix/linux
+#### unix/linux
 
 ~~~~{.bash}
 $ virtualenv env
@@ -71,7 +71,7 @@ $ source env/bin/activate
 (env)$ pip install -r requirements.txt
 ~~~~
 
-### Windows
+#### Windows
 
 ~~~~{.bash}
 > virtualenv env
@@ -81,7 +81,7 @@ $ source env/bin/activate
 
 ---
 
-### Writing functions
+#### Writing functions
 
   - Basic function syntax
   - Main
@@ -92,7 +92,7 @@ $ source env/bin/activate
 
 ---
 
-### A function
+#### A function
 
 ~~~~{.python}
 def add_numbers(x, y):
@@ -106,7 +106,7 @@ def add_numbers(x, y):
 
 ---
 
-### Main
+#### Main
 
 ~~~~{.python}
 def add_numbers(x, y):
@@ -121,7 +121,7 @@ if __name__ == "__main__":
 
 ---
 
-### Positional and Named Arguments
+#### Positional and Named Arguments
 
 ~~~~{.python}
 def add_numbers(x, y="7"):
@@ -138,7 +138,7 @@ def add_numbers(x="2", y):
 ---
 
 
-### <code>*args</code> and <code>**kwargs</code>
+#### Argument Lists and Keyword Arguments
 
 ~~~~{.python}
 def add_numbers(*args, **kwargs):
@@ -149,6 +149,8 @@ def add_numbers(*cats, **dogs):
 ~~~~
 
 ---
+
+#### Argument List Example
 
 ~~~~{.python}
 def using_args(foo, *args):
@@ -164,6 +166,7 @@ foo: inventory
 ~~~~
 
 ---
+#### Keyword Argument Example
 
 ~~~~{.python}
 def using_kwargs(foo, **kwargs):
@@ -178,6 +181,7 @@ foo: inventory
 ~~~~
 
 ---
+#### Argument Lists and Keywords Example
 
 ~~~~{.python}
 def using_args_and_kwargs(foo, *args, **kwargs):
