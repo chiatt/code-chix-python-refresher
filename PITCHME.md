@@ -81,19 +81,93 @@ $ source env/bin/activate
 
 ---
 
-
 ## Writing functions
 
   - Basic function syntax
-  - Arguments - default values
+  - Main
+  - Arguments - positional and named
   - Our activity will cover reading files, so we will briefly
    cover file i/o and using 'with' to create a context
   Activity 1: Participants will write two functions one that reads data from a csv and a second function that calculates the cartesian distance between two pairs of coordinates
 
+---
+
+## A function
+
 ~~~~{.python}
+def add_numbers(x, y):
+    return x + y
+~~~~
+
+~~~~{.python}
+>>> add_numbers(22, 8)
+>>> 30
+~~~~
+
+## Main
+
+~~~~{.python}
+def add_numbers(x, y):
+    return x + y
+
+def main():
+    add_numbers()
+
 if __name__ == "__main__":
-    # execute only if run as a script
     main()
+~~~~
+
+---
+
+## Arguments
+
+### Positional and Named
+
+~~~~{.python}
+def add_numbers(x, y="7"):
+    pass
+
+def add_numbers(x="2", y="7"):
+    pass
+
+# You can't do:
+def add_numbers(x="2", y):
+    pass
+~~~~
+
+---
+
+## *args and **kwargs
+
+~~~~{.python}
+def add_numbers(x, y="7"):
+    pass
+~~~~
+
+---
+
+~~~~{.python}
+def using_args(foo, *args):
+    print('foo:', foo)
+    print('*args:', args)
+
+~~~~
+
+---
+
+~~~~{.python}
+def using_kwargs(foo, **kwargs):
+    print('foo:', foo)
+    print('**kwargs:', kwargs)
+~~~~
+
+---
+
+~~~~{.python}
+def using_args_and_kwargs(foo, *args, **kwargs):
+    print('foo:', foo)
+    print('*args:', args)
+    print('**kwargs:', kwargs)
 ~~~~
 
 ---
