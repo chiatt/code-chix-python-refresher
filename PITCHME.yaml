@@ -1,4 +1,3 @@
-theme : [black, moon, sky]
 theme-override: assets/css/PITCHME.css
 layout : center
 footnote : "Python - an introduction"
