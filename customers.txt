@@ -1,0 +1,6 @@
+name|easting|northing|petcount
+linda|122.12|37.59|2
+ralph|122.09|37.50|4
+kieth|122.20|37.51|2
+cindy|122.16|37.57|1
+aimee|122.11|37.53|3
