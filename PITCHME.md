@@ -1,58 +1,47 @@
-# A Python Refresher
+## A Python Refresher
 
 ---
 
-## Just a little about me...
+### Just a little about me...
 
 ![](assets/img/board-measurements.jpg)
 
 ---
-@title[Customize Slide Layout]
 
-@snap[west span-50]
-## This is a presentation
-@snapend
+### Workshop overview
 
----
-
-## Workshop objectives
-
-Through the exercises in this workshop participants will read over a file containing a list of customers. They will then write functions to parse the data and calculate the distance between a mock business and each customer.
-
-They will then identify their mock businesses closest customers and, time permitting, write the results out in geojson which they can visualize on a platform such as http://geojson.io
+- virtualenv and pip
+- data structures
+- generators and comprehensions
+- functions
+- decorators
 
 ---
 
-## Python overview: qualities and conventions
+### Workshop overview
 
-    - Interpreted language
-    - Interactive mode
-    - Easy to learn/read syntax enforced by indentation
-    - Rapid development
-    - PEP 8
-
+- Map some customer data for a mock business
 
 ---
 
-## Installing Python and dependencies
+### Python overview: qualities and conventions
 
-  - Virtualenv: What it is and why it’s useful
-  - PyPi/pip: Where you can find or distribute packages
-      - installing, upgrading, searching for packages
-  - Requirements.txt - creating and installing from requirements.txt
-  - What are modules and packages
-
-    Activity 1: Install python in a virtual environment and install dependencies using a requirements.txt file. For review we will just confirm that everyone has everything they need installed to proceed with the workshop
+- Interpreted language
+- Interactive mode
+- Easy to learn/read syntax enforced by indentation
+- Rapid development
+- PEP 8
 
 ---
 
-  ## Virtualenv
+## Virtualenv
 
-  - Allows you to have multiple installations of Python
-  - Useful for projects with different versions of the
-  same dependency.
-  - Node does this differently with a global installation and dependencies
-  installed in each project directory.
+- Allows you to have multiple installations of Python
+- Useful for projects with different versions of the
+same dependency.
+- Node does this differently with a global installation and dependencies
+installed in each project directory.
+
 ---
 
 #### requirements.txt
