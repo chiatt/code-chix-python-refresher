@@ -137,6 +137,7 @@ def add_numbers(x="2", y):
 
 ---
 
+
 ### <code>*args</code> and <code>**kwargs</code>
 
 ~~~~{.python}
