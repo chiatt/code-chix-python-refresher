@@ -46,11 +46,12 @@ installed in each project directory.
 
 #### requirements.txt
 
-folium
+folium==0.8.3
+ipdb==0.12
 
 ---
 
-## Installing requirements
+### Installing requirements
 
 #### unix/linux
 
@@ -67,6 +68,30 @@ $ source env/bin/activate
 > env\Scripts\activate
 (env) > pip install -r requirements.txt
 ~~~~
+
+---
+
+#### data structures
+
+Tuples
+Lists
+Dictionaries
+Sets
+
+---
+
+#### iterators
+
+enumerate
+iterating over dictionaries
+
+---
+
+#### generators
+
+---
+
+#### comprehensions
 
 ---
 
@@ -91,21 +116,6 @@ def add_numbers(x, y):
 ~~~~{.python}
 >>> add_numbers(22, 8)
 30
-~~~~
-
----
-
-#### Main
-
-~~~~{.python}
-def add_numbers(x, y):
-    return x + y
-
-def main():
-    add_numbers()
-
-if __name__ == "__main__":
-    main()
 ~~~~
 
 ---
@@ -184,6 +194,25 @@ def using_args_and_kwargs(foo, *args, **kwargs):
 foo: inventory
 *args: ('cats', 'dogs')
 **kwargs: {'birds': 10, 'hamsters': 5}
+~~~~
+
+---
+
+#### Decorators
+
+---
+
+#### Main
+
+~~~~{.python}
+def add_numbers(x, y):
+    return x + y
+
+def main():
+    add_numbers()
+
+if __name__ == "__main__":
+    main()
 ~~~~
 
 ---
