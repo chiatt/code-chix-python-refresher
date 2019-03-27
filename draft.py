@@ -3,6 +3,43 @@ import functools
 import math
 import csv
 
+def create_records_generator(start, end):
+    while start < end:
+        start += 1
+        yield start
+
+def create_records_array(start, end):
+    res = []
+    while start < end:
+        start += 1
+        res.append(start)
+    return res
+
+array = create_records_array(3, 10000)
+for n in array:
+    print(n)
+
+generator = create_records_generator(3, 10000)
+for x in generator:
+    print(x)
+
+# Generators require less memory than lists
+# Then why not always use generators?
+## lists should be used when you are iterating multiple times over the list (because they're cached).
+## lists are needed when you need to access items out of order
+
+
+## closures
+def get_fn():
+    x = 21
+    def add_numbers(y):
+        return x + y
+    return add_numbers
+
+ff = get_fn()
+print(ff(2))
+
+
 # read create location
 # read file/create customers
 # calculate distance
@@ -22,9 +59,12 @@ def using_args_and_kwargs(foo, *args, **kwargs):
 
 def read_customer_data(path):
     with open(path, 'r') as f:
-        customers = csv.reader(f, delimiter='|')
-        for customer in customers:
-            print(customer)
+        customers = []
+        customer_records = csv.DictReader(f, delimiter='|')
+        for customer in customer_records:
+            print(customer['easting'])
+            customers.append(customer)
+        print(customers)
 
 def calc_distance_no_decorator(start=0, end=0):
     res = math.sqrt(((start['x']-end['x'])**2) + ((start['y']-end['y'])**2))
@@ -89,5 +129,5 @@ def main():
     print(distance_no_dec)
     map_results()
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
