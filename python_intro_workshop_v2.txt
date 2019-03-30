@@ -1,0 +1,63 @@
+Intro to Python
+
+Through the exercises in this workshop participants will read over a file containing a list of customers. They will then write functions to parse the data and calculate the distance between a mock business and each customer.
+
+They will then identify their mock businesses closest customers and, time permitting, write the results out in geojson which they can visualize on a platform such as http://geojson.io
+
+The exercises will be relatively simple, but I will make suggestions of things more advanced developers can do to challenge themselves.
+
+1. Python overview: qualities and conventions
+  a. Interpreted language
+  b. Interactive mode
+  c. Easy to learn/read syntax enforced by indentation
+  d. Rapid development
+  e. PEP 8
+
+  lecture 10min
+  --------------
+  * total: 10 min
+
+2. Installing Python and dependencies
+  a. Virtualenv: What it is and why it’s useful
+  b. What are modules and packages
+  c. PyPi/pip: Where you can find or distribute packages
+    i. installing, upgrading, searching for packages
+  d. Requirements.txt - creating and installing from requirements.txt
+  Activity 1: Install python in a virtual environment and install dependencies using a requirements.txt file.
+  For review we will just confirm that everyone has everything they need installed to proceed with the workshop
+
+  lecture: 5min
+  activity: 5min
+  review: 5min
+  -----------
+  total: 15min
+
+3. Data Structures and Iterating
+  a. Strings and string formatting
+  b. Tuples, Lists, Sets, Dictionaries
+  c. List comprehensions
+  Activity 1: Participants will read over a text file and parse each record into a dictionary.
+
+4. Writing functions
+  a. Basic function syntax
+  b. Arguments - default values
+  c. Our activity will cover reading files, so we will briefly cover file i/o and using 'with' to create a context
+  Activity 1: Participants will write two functions one that reads data from a csv and a second function that calculates the cartesian distance between two pairs of coordinates
+
+  lecture: 10min
+  activity 1: 15min, review: 5min
+  ------------
+  total: 35min
+
+5. Advanced Functions
+  d. Generators
+  e. Decorators
+  Activity 2: Participants will write a decorator for their distance function that will return a dictionary with the start and end coordinates, and distance value
+  Activity 3: Participants will use a list comprehension to filter their data by a given distance.
+
+  lecture: 20min
+  activity 1: 5min, review: 5min
+  activity 2: 10min, review: 5min
+  activity 3: 5min, review: 5min
+  ------------
+  total: 60min
