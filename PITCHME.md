@@ -8,23 +8,20 @@
 
 ---
 
-### Workshop overview
+### Workshop outline
 
-- virtualenv and pip
+- Python overview
+- installation and dependencies
 - data structures
-- generators and comprehensions
 - functions
+- generators and comprehensions
 - decorators
 
----
-
-### Workshop overview
-
-- Map some customer data for a mock business
+- Activities: Map some customer data for a mock business
 
 ---
 
-### Python overview: qualities and conventions
+## Part I: Python Overview
 
 - Interpreted language
 - Interactive mode
@@ -34,7 +31,15 @@
 
 ---
 
-## Virtualenv
+## Part II: Installation and dependencies
+
+- Virtualenv
+- PyPi and pip
+- requirements
+
+---
+
+#### Virtualenv
 
 - Allows you to have multiple installations of Python
 - Useful for projects with different versions of the
@@ -51,9 +56,9 @@ ipdb==0.12
 
 ---
 
-### Installing requirements
+#### Installing with requirements
 
-#### unix/linux
+##### unix/linux
 
 ~~~~{.bash}
 $ virtualenv env
@@ -71,35 +76,81 @@ $ source env/bin/activate
 
 ---
 
+Activity:
+
+- create a virtualenv
+- install dependencies from requirements.txt
+
+---
+
+## Part III: Data structures and Iteration
+
+---
+
 #### data structures
 
-Tuples
-Lists
-Dictionaries
-Sets
+- Tuples
+- Lists
+- Dictionaries
+- Sets
 
 ---
 
-#### iterators
+#### data structures - tuples
 
-enumerate
-iterating over dictionaries
+- immutable
+- store heterogeneous object types
+- enclosed in ()
+- trailing comma for 1 item tuples
+
+----
+
+#### data structures - lists
+
+- mutable
+- store heterogeneous object types
+- enclosed in []
+- trailing comma isn't needed
+- zip
+
+----
+
+#### data structures - dictionaries
+
+- store heterogeneous object types
+- ordered in Python 3, unordered in Python 2
+- zip dict
+
+----
+
+#### data structures - sets
+
+----
+
+#### iteratation
 
 ---
 
-#### generators
+- for
+- enumerate
+- iterating over dictionaries
 
 ---
 
-#### comprehensions
+#### list comprehensions
 
 ---
 
-#### Writing functions
+#### set comprehensions
 
-  - Basic function syntax
-  - Main
-  - Arguments - positional and named
+---
+
+## Part VI: Functions
+
+  - basic function syntax
+  - arguments - positional and named
+  - args and kwargs
+  - main
   - Our activity will cover reading files, so we will briefly
    cover file i/o and using 'with' to create a context
   Activity 1: Participants will write two functions one that reads data from a csv and a second function that calculates the cartesian distance between two pairs of coordinates
@@ -198,32 +249,22 @@ foo: inventory
 
 ---
 
-#### Decorators
-
----
-
 #### Main
 
 ~~~~{.python}
 def add_numbers(x, y):
-    return x + y
+return x + y
 
 def main():
-    add_numbers()
+add_numbers()
 
 if __name__ == "__main__":
-    main()
+main()
 ~~~~
 
 ---
 
-## Data Structures and Iterating
-
-  - Strings and string formatting
-  - Tuples, Lists, Sets, Dictionaries
-  - List comprehensions
-  - Generators
-  - Decorators
+## Part V: Functions - Generators and Decorators
 
 ---
 
@@ -236,6 +277,10 @@ Participants will read over a text file and parse each record into a dictionary.
 ## Activity 2:
 
 Participants will write a decorator for their distance function that will return a dictionary with the start and end coordinates, and distance value
+
+---
+
+#### Decorators
 
 ---
 
@@ -272,9 +317,3 @@ print distance_no_dec
 @[15-18]
 @[20]
 @[21]
-
----
-
-## Activity 3:
-
-Participants will use a list comprehension to filter their data by a given distance.
