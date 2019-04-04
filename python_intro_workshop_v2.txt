@@ -6,12 +6,9 @@ They will then identify their mock businesses closest customers and, time permit
 
 The exercises will be relatively simple, but I will make suggestions of things more advanced developers can do to challenge themselves.
 
-1. Python overview: qualities and conventions
-  a. Interpreted language
-  b. Interactive mode
-  c. Easy to learn/read syntax enforced by indentation
-  d. Rapid development
-  e. PEP 8
+1. Python overview
+  a. Some of Python's defining qualities
+  b. PEP 8
 
   lecture 10min
   --------------

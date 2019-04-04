@@ -3,6 +3,34 @@ import functools
 import math
 import csv
 
+## closures
+def get_fn():
+    x = 21
+    def add_numbers(y):
+        return x + y
+    return add_numbers
+
+ff = get_fn()
+print(ff(2))
+
+# read create location
+# read file/create customers
+# calculate distance
+# create map
+def using_args(foo, *args):
+    print('foo:', foo)
+    print('*args:', args)
+
+def using_kwargs(foo, **kwargs):
+    print('foo:', foo)
+    print('**kwargs:', kwargs)
+
+def using_args_and_kwargs(foo, *args, **kwargs):
+    print('foo:', foo)
+    print('*args:', args)
+    print('**kwargs:', kwargs)
+
+#### Generators
 def create_records_generator(start, end):
     while start < end:
         start += 1
@@ -29,34 +57,6 @@ for n in array:
 ## lists should be used when you are iterating multiple times over the list (because they're cached).
 ## lists are needed when you need to access items out of order
 
-
-## closures
-def get_fn():
-    x = 21
-    def add_numbers(y):
-        return x + y
-    return add_numbers
-
-ff = get_fn()
-print(ff(2))
-
-
-# read create location
-# read file/create customers
-# calculate distance
-# create map
-def using_args(foo, *args):
-    print('foo:', foo)
-    print('*args:', args)
-
-def using_kwargs(foo, **kwargs):
-    print('foo:', foo)
-    print('**kwargs:', kwargs)
-
-def using_args_and_kwargs(foo, *args, **kwargs):
-    print('foo:', foo)
-    print('*args:', args)
-    print('**kwargs:', kwargs)
 
 def read_customer_data(path):
     with open(path, 'r') as f:
@@ -130,5 +130,5 @@ def main():
     print(distance_no_dec)
     map_results()
 
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()

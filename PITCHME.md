@@ -129,8 +129,6 @@ Activity:
 
 #### iteratation
 
----
-
 - for
 - enumerate
 - iterating over dictionaries
@@ -274,12 +272,6 @@ Participants will read over a text file and parse each record into a dictionary.
 
 ---
 
-## Activity 2:
-
-Participants will write a decorator for their distance function that will return a dictionary with the start and end coordinates, and distance value
-
----
-
 #### Decorators
 
 ---
@@ -317,3 +309,11 @@ print distance_no_dec
 @[15-18]
 @[20]
 @[21]
+
+---
+
+## Activity 2:
+
+Participants will write a decorator for their distance function that will return a dictionary with the start and end coordinates, and distance value
+
+---
