@@ -4,14 +4,17 @@ import math
 import csv
 import json
 import random
+import os
 
 
-## closures
+# closures
 def get_fn():
     x = 21
+
     def add_numbers(y):
         return x + y
     return add_numbers
+
 
 ff = get_fn()
 print(ff(2))
@@ -20,24 +23,30 @@ print(ff(2))
 # read file/create customers
 # calculate distance
 # create map
+
+
 def using_args(foo, *args):
     print('foo:', foo)
     print('*args:', args)
 
+
 def using_kwargs(foo, **kwargs):
     print('foo:', foo)
     print('**kwargs:', kwargs)
+
 
 def using_args_and_kwargs(foo, *args, **kwargs):
     print('foo:', foo)
     print('*args:', args)
     print('**kwargs:', kwargs)
 
-#### Generators
+
+# Generators
 def create_records_generator(start, end):
     while start < end:
         start += 1
         yield start
+
 
 def create_records_array(start, end):
     res = []
@@ -57,8 +66,10 @@ def create_records_array(start, end):
 #         print('from array', n)
 # Generators require less memory than lists
 # Then why not always use generators?
-## lists should be used when you are iterating multiple times over the list (because they're cached).
-## lists are needed when you need to access items out of order
+
+# lists should be used when you are iterating multiple times over the list
+# (because they're cached).
+# lists are needed when you need to access items out of order
 
 
 def read_customer_data(path):
@@ -70,9 +81,11 @@ def read_customer_data(path):
             customers.append(customer)
     return customers
 
+
 def calc_distance_no_decorator(start=0, end=0):
     res = math.sqrt(((start['x']-end['x'])**2) + ((start['y']-end['y'])**2))
     return res
+
 
 def make_geojson(func):
     @functools.wraps(func)
@@ -82,10 +95,12 @@ def make_geojson(func):
         return kwargs
     return wrapper_convert_to_json
 
+
 @make_geojson
 def calc_distance(start, end):
     res = math.sqrt(((start['x']-end['x'])**2) + ((start['y']-end['y'])**2))
     return res
+
 
 def create_features(records):
     features = []
@@ -106,6 +121,7 @@ def create_features(records):
         }
         features.append(feature)
     return features
+
 
 def map_results(features=[]):
     print(features[0])
@@ -136,14 +152,18 @@ def map_results(features=[]):
     folium.LayerControl().add_to(m)
     m.save('index.html')
 
+
 def main():
     using_args('inventory', 'birds', 'hamsters')
     using_kwargs('inventory', birds=10, hamsters=5)
     using_args_and_kwargs('inventory', 'cats', 'dogs', birds=10, hamsters=5)
-    customers = read_customer_data('/Users/cyrus/Documents/projects/codechix/code-chix-py-deck/customers.txt')
+    path = os.path.join(os.getcwd(), 'customers.txt')
+    customers = read_customer_data(path)
     features = create_features(customers)
     distance = calc_distance(start={'x': 5, 'y': 10}, end={'x': 2, 'y': 7})
-    distance_no_dec = calc_distance_no_decorator(start={'x': 5, 'y': 10}, end={'x': 2, 'y': 7})
+    distance_no_dec = calc_distance_no_decorator(
+        start={'x': 5, 'y': 10},
+        end={'x': 2, 'y': 7})
     print(distance)
     print(distance_no_dec)
     map_results(features)
