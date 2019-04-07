@@ -1,0 +1,13 @@
+Python Refresher Prerequisites
+
+Participants should have Python installed on their machines (https://www.python.org/downloads/). Python 3.7 is strongly recommended as all examples will be written for version 3.7.
+However, if for some reason participants can't install the latest version, Python 2.7.9 or greater should work for all activities.
+
+Apple machines come with version 2.7 installed. Here are instructions for installing Python 3 using homebrew:
+  https://docs.python-guide.org/starting/install3/osx/
+
+If users have an earlier version of Python installed (prior to 3.3), they will also need to install virtualenv.
+  https://virtualenv.pypa.io/en/latest/
+
+Participants should also have the following text file downloaded to their machines:
+  https://www.dropbox.com/s/r9jefufn13nn9zi/customers.txt?dl=0
