@@ -2,6 +2,9 @@ import folium
 import functools
 import math
 import csv
+import json
+import random
+
 
 ## closures
 def get_fn():
@@ -43,15 +46,15 @@ def create_records_array(start, end):
         res.append(start)
     return res
 
-generator = create_records_generator(3, 100000000)
-for x in generator:
-    if x % 10000000 == 0:
-        print('from generator', x)
-
-array = create_records_array(3, 100000000)
-for n in array:
-    if n % 10000000 == 0:
-        print('from array', n)
+# generator = create_records_generator(3, 100000000)
+# for x in generator:
+#     if x % 10000000 == 0:
+#         print('from generator', x)
+#
+# array = create_records_array(3, 100000000)
+# for n in array:
+#     if n % 10000000 == 0:
+#         print('from array', n)
 # Generators require less memory than lists
 # Then why not always use generators?
 ## lists should be used when you are iterating multiple times over the list (because they're cached).
@@ -59,13 +62,13 @@ for n in array:
 
 
 def read_customer_data(path):
+    customers = []
     with open(path, 'r') as f:
-        customers = []
         customer_records = csv.DictReader(f, delimiter='|')
         for customer in customer_records:
             print(customer['easting'])
             customers.append(customer)
-        print(customers)
+    return customers
 
 def calc_distance_no_decorator(start=0, end=0):
     res = math.sqrt(((start['x']-end['x'])**2) + ((start['y']-end['y'])**2))
@@ -84,30 +87,45 @@ def calc_distance(start, end):
     res = math.sqrt(((start['x']-end['x'])**2) + ((start['y']-end['y'])**2))
     return res
 
-def map_results(features=[]):
-    gj = """
-        {
-          "type": "FeatureCollection",
-          "features": [
-            {
-              "type": "Feature",
-              "properties": {},
-              "geometry": {
-                "type": "Point",
-                "coordinates": [
-                  -121.80816650390625,
-                  36.41465185677695
-                ]
-              }
-            }
-          ]
+def create_features(records):
+    features = []
+    for record in records:
+        feature = {
+          "type": "Feature",
+          "properties": {
+            "name": record["name"],
+            "pets": record["petcount"]
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+                record["easting"],
+                record["northing"]
+            ]
+          }
         }
-        """
+        features.append(feature)
+    return features
 
+def map_results(features=[]):
+    print(features[0])
+    from pprint import pprint as pp
+    featurejson = json.dumps(features)
+    geo = {
+          "type": "FeatureCollection",
+          "features": features
+        }
+
+    gj = json.dumps(geo)
+
+    print(gj)
+
+    easting = random.uniform(-122.112007, -122.056732)
+    northing = random.uniform(37.367974, 37.424979)
     m = folium.Map(
-        location=[36.41465185677695, -121.8],
+        location=[northing, easting],
         tiles='OpenStreetMap',
-        zoom_start=16
+        zoom_start=14
     )
 
     folium.GeoJson(
@@ -122,13 +140,13 @@ def main():
     using_args('inventory', 'birds', 'hamsters')
     using_kwargs('inventory', birds=10, hamsters=5)
     using_args_and_kwargs('inventory', 'cats', 'dogs', birds=10, hamsters=5)
-    read_customer_data('/Users/cyrus/Documents/projects/codechix/code-chix-py-deck/customers.txt')
+    customers = read_customer_data('/Users/cyrus/Documents/projects/codechix/code-chix-py-deck/customers.txt')
+    features = create_features(customers)
     distance = calc_distance(start={'x': 5, 'y': 10}, end={'x': 2, 'y': 7})
     distance_no_dec = calc_distance_no_decorator(start={'x': 5, 'y': 10}, end={'x': 2, 'y': 7})
-
     print(distance)
     print(distance_no_dec)
-    map_results()
+    map_results(features)
 
 if __name__ == '__main__':
     main()
