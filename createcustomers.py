@@ -1,4 +1,6 @@
-import random, csv
+import random
+import csv
+
 
 def read_customer_data(path):
     customers = []
@@ -12,12 +14,15 @@ def read_customer_data(path):
     return customers
 
 
-customers = read_customer_data('/Users/cyrus/Documents/projects/codechix/code-chix-py-deck/Untitled')
+source = '/Users/cyrus/Documents/projects/codechix/code-chix-py-deck/Untitled'
+dest = '/Users/cyrus/Documents/projects/codechix/code-chix-py-deck/customers.txt'
+customers = read_customer_data(source)
 
-with open('/Users/cyrus/Documents/projects/codechix/code-chix-py-deck/customers2.txt', 'w') as f:
+with open(dest, 'w') as f:
     f.write('name|easting|northing|petcount\n')
     for customer in customers:
-        rec = ('{0}|{1}|{2}|{3}\n').format(customer['name'],
+        rec = ('{0}|{1}|{2}|{3}\n').format(
+            customer['name'],
             customer['easting'],
             customer['northing'],
             customer['petcount'])
