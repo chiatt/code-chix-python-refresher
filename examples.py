@@ -55,15 +55,16 @@ def create_records_array(start, end):
         res.append(start)
     return res
 
-# generator = create_records_generator(3, 100000000)
-# for x in generator:
-#     if x % 10000000 == 0:
-#         print('from generator', x)
-#
-# array = create_records_array(3, 100000000)
-# for n in array:
-#     if n % 10000000 == 0:
-#         print('from array', n)
+
+generator = create_records_generator(3, 100000000)
+for x in generator:
+    if x % 10000000 == 0:
+        print('from generator', x)
+
+array = create_records_array(3, 100000000)
+for n in array:
+    if n % 10000000 == 0:
+        print('from array', n)
 # Generators require less memory than lists
 # Then why not always use generators?
 
