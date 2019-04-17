@@ -1,7 +1,0 @@
-theme-override: assets/css/PITCHME.css
-layout : center
-footnote : "Python - an introduction"
-published : false
-title : "A Python Refresher Workshop"
-description : "A short workshop to introduce some of Pythons fine qualities"
-highlight : atom-one-dark
