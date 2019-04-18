@@ -36,6 +36,8 @@ res = [dict(zip(header, record)) for record in records]
 """
 ### Activity 2:
 
+Write two functions  
+
 1. One called 'parse_csv' to read customers.txt and return a list of dictionaries.
     It should take a path and a delimeter as arguments.
 
