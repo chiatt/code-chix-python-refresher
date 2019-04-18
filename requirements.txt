@@ -1,1 +1,2 @@
 folium==0.8.3
+haversine==2.0.0
