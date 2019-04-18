@@ -32,6 +32,7 @@ def parse_csv(path, delimiter='|'):
         )
     return res
 
+
 def abbreviate(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
@@ -39,18 +40,22 @@ def abbreviate(func):
         return '{0} ...'.format(get_string_res[0:6])
     return wrapper
 
+
 @abbreviate
 def get_string(some_string):
     return some_string
+
 
 def main():
     path = '/Users/cyrus/Documents/projects/codechix/code-chix-py-deck/customers.txt'
     store_location = ([37.385, -122.089])
     customer_location = {'easting': -122.5, 'northing': 37.56}
     units = 'km'
+    features = []
+
     for rec in parse_csv(path):
         rec = calc_distance(customer=rec, store_location=(37.51, -122.5), units='km')
-        print(get_string(rec['name'])
+        print(get_string(rec['name']))
         features.append(rec)
 
 if __name__ == '__main__':

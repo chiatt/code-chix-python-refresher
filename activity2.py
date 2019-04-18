@@ -27,7 +27,8 @@ def format_num(val):
 
 def main():
     path = '/Users/cyrus/Documents/projects/codechix/code-chix-py-deck/customers.txt'
-    parse_csv(path)
+    records = parse_csv(path)
+    print(records[0])
 
 if __name__ == '__main__':
     main()

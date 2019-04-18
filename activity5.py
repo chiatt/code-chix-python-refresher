@@ -32,12 +32,14 @@ def parse_csv(path, delimiter='|'):
         )
     return res
 
+
 def abbreviate(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         get_string_res = func(*args, **kwargs)
         return '{0} ...'.format(get_string_res[0:6])
     return wrapper
+
 
 def make_geojson(func):
     @functools.wraps(func)
@@ -58,6 +60,7 @@ def make_geojson(func):
         return feature
     return wrapper_convert_to_json
 
+
 @make_geojson
 def calc_distance(customer={}, store_location=(37.51, -122.5), units='km'):
     cust_y, cust_x = customer['northing'], customer['easting']
@@ -65,7 +68,8 @@ def calc_distance(customer={}, store_location=(37.51, -122.5), units='km'):
     customer['distance'] = distance
     return customer
 
-def map_results(features=[]):
+
+def map_results(center, features=[]):
     fc = {
           "type": "FeatureCollection",
           "features": features
@@ -73,7 +77,7 @@ def map_results(features=[]):
     points = json.dumps(fc)
 
     m = folium.Map(
-        location=store_location,
+        location=center,
         tiles='OpenStreetMap',
         zoom_start=14
     )
@@ -87,17 +91,16 @@ def map_results(features=[]):
     m.save('index.html')
     return m
 
+
 def main():
     path = '/Users/cyrus/Documents/projects/codechix/code-chix-py-deck/customers.txt'
-    store_location = ([37.385, -122.089])
-    customer_location = {'easting': -122.5, 'northing': 37.56}
-    units = 'km'
+    store_location = (37.385, -122.089)
     features = []
     for rec in parse_csv(path):
-        rec = calc_distance(customer=rec, store_location=(37.51, -122.5), units='km')
+        rec = calc_distance(customer=rec, store_location=store_location, units='km')
         features.append(rec)
 
-    map_results(features)
+    map_results(store_location, features)
 
 if __name__ == '__main__':
     main()

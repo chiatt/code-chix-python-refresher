@@ -39,8 +39,9 @@ def main():
     store_location = ([37.385, -122.089])
     customer_location = {'easting': -122.5, 'northing': 37.56}
     units = 'km'
-    calc_distance(store_location=store_location, customer=customer_location, units='km')
-
+    dist = calc_distance(store_location=store_location, customer=customer_location, units='km')
+    print(dist)
+    print(records)
 
 if __name__ == '__main__':
     main()
