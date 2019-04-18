@@ -2,9 +2,10 @@ import folium
 import functools
 import json
 import logging
+import os
 from haversine import haversine
 
-path = '/Users/cyrus/Documents/projects/codechix/code-chix-py-deck/customers.txt'
+path = os.path.join(os.getcwd(), 'data', 'customers.txt')
 
 with open(path, 'r') as f:
     lines = f.readlines()

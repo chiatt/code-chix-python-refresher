@@ -2,8 +2,8 @@ import folium
 import functools
 import json
 import logging
+import os
 from haversine import haversine
-
 
 def calc_distance(store_location, customer, units):
     cust_y, cust_x = customer['northing'], customer['easting']
@@ -47,7 +47,7 @@ def get_string(some_string):
 
 
 def main():
-    path = '/Users/cyrus/Documents/projects/codechix/code-chix-py-deck/customers.txt'
+    path = os.path.join(os.getcwd(), 'data', 'customers.txt')
     store_location = ([37.385, -122.089])
     customer_location = {'easting': -122.5, 'northing': 37.56}
     units = 'km'
